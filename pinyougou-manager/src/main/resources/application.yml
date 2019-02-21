@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:mysql://10.12.2.186:3306/geec_online_customer_service?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123
