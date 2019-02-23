@@ -1,8 +1,10 @@
 package com.pinyougou.config.shiro;
 
+import com.pinyougou.config.properties.ShiroConfigProperties;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,6 +15,9 @@ import java.util.Map;
 
 @Configuration
 public class ShiroConfig {
+
+    @Autowired
+    ShiroConfigProperties configProperties;
 
     @Bean
     public SecurityManager securityManager() {
@@ -36,7 +41,11 @@ public class ShiroConfig {
 
         // 测试请求
         filterChainDefinitionMap.put("/api/v1/sys/login", "anon");
-        filterChainDefinitionMap.put("/**","oauth2");
+
+        // 设置shiro开关
+        if(configProperties.getEnable()){
+            filterChainDefinitionMap.put("/**","oauth2");
+        }
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilterFactoryBean;
     }

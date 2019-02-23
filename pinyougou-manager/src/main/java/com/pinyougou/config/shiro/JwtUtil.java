@@ -3,14 +3,13 @@ package com.pinyougou.config.shiro;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.interfaces.DecodedJWT;
 
 import java.util.Date;
 
 public class JwtUtil {
 
-    private static final long EXPIRE_TIME = 5 * 60 * 1000;
+    private static final long EXPIRE_TIME = 10 * 1000;
 
     /**
      * 校验token是否正确
@@ -40,12 +39,8 @@ public class JwtUtil {
      * @return token中包含的用户名
      */
     public static String getUsername(String token) {
-        try {
-            DecodedJWT jwt = JWT.decode(token);
-            return jwt.getClaim("username").asString();
-        } catch (JWTDecodeException e) {
-            return null;
-        }
+        DecodedJWT jwt = JWT.decode(token);
+        return jwt.getClaim("username").asString();
     }
 
     /**

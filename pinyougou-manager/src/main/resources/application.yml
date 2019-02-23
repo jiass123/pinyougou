@@ -10,3 +10,6 @@ mybatis:
       mapperLocations: classpath*:mapper/**/*.xml
       configuration:
         map-underscore-to-camel-case: true
+#shrio配置
+shiro:
+    enable: true

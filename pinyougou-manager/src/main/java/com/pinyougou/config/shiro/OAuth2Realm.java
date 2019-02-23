@@ -47,20 +47,20 @@ public class OAuth2Realm extends AuthorizingRealm {
         String username;
         try{
             username = JwtUtil.getUsername(accessToken);
-        }catch (NullPointerException e){
-            throw new AuthenticationException("token无效,请重新登陆");
+        }catch (Exception e){
+            throw new AuthenticationException("invalid token");
         }
         if (username == null) {
-            throw new AuthenticationException("token失效,请重新登陆");
+            throw new AuthenticationException("invalid token");
         }
         User userQuery = new User();
         userQuery.setUsername(username);
         User user = userService.queryOne(userQuery);
         if (user == null) {
-            throw new AuthenticationException("用户不存在!");
+            throw new AuthenticationException("invalid token");
         }
         if (!JwtUtil.verify(accessToken, username, user.getPassword())) {
-            throw new AuthenticationException("用户名或密码错误");
+            throw new AuthenticationException("invalid token");
         }
         return new SimpleAuthenticationInfo(accessToken, accessToken, getName());
     }
