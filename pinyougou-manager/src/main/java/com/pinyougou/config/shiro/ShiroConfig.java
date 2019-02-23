@@ -17,7 +17,7 @@ public class ShiroConfig {
     @Bean
     public SecurityManager securityManager() {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
-        securityManager.setRealm(new OAuth2Realm());
+        securityManager.setRealm(oAuth2Realm());
         return securityManager;
     }
 
@@ -39,5 +39,11 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/**","oauth2");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilterFactoryBean;
+    }
+
+    @Bean
+    public OAuth2Realm oAuth2Realm(){
+        OAuth2Realm oAuth2Realm = new OAuth2Realm();
+        return oAuth2Realm;
     }
 }

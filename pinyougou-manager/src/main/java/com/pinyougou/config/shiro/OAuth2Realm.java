@@ -1,6 +1,6 @@
 package com.pinyougou.config.shiro;
 
-import com.pinyougou.exception.GlobalException;
+import com.alibaba.fastjson.JSON;
 import com.pinyougou.sys.api.UserService;
 import com.pinyougou.sys.entity.User;
 import org.apache.shiro.authc.AuthenticationException;
@@ -11,9 +11,7 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-@Component
 public class OAuth2Realm extends AuthorizingRealm {
 
     @Autowired

@@ -10,7 +10,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 @SpringBootApplication
 @MapperScan("com.pinyougou.*.mapper")
 @EnableTransactionManagement
-public class ManagerApplication  extends SpringBootServletInitializer {
+public class ManagerApplication extends SpringBootServletInitializer {
     public static void main(String[] args) {
         SpringApplication.run(ManagerApplication.class, args);
     }
@@ -18,4 +18,5 @@ public class ManagerApplication  extends SpringBootServletInitializer {
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(ManagerApplication.class);
-    }}
+    }
+}
