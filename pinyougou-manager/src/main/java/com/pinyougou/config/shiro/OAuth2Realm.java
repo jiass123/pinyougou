@@ -1,6 +1,8 @@
 package com.pinyougou.config.shiro;
 
+import com.pinyougou.exception.GlobalException;
 import com.pinyougou.sys.api.UserService;
+import com.pinyougou.sys.entity.User;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -15,7 +17,7 @@ import org.springframework.stereotype.Component;
 public class OAuth2Realm extends AuthorizingRealm {
 
     @Autowired
-    private UserService userSerivce;
+    private UserService userService;
 
     /**
      * 支持jwtToken
@@ -44,17 +46,24 @@ public class OAuth2Realm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         String accessToken = (String) authenticationToken.getCredentials();
-        String username = JwtUtil.getUsername(accessToken);
-        if (username == null) {
-            throw new AuthenticationException("token无效");
+        String username;
+        try{
+            username = JwtUtil.getUsername(accessToken);
+        }catch (NullPointerException e){
+            throw new AuthenticationException("token无效,请重新登陆");
         }
-//        if (userBean == null) {
-//            throw new AuthenticationException("用户不存在!");
-//        }
-//
-//        if (!JwtUtil.verify(accessToken, username, userBean.getPassword())) {
-//            throw new AuthenticationException("用户名或密码错误");
-//        }
-        return new SimpleAuthenticationInfo(accessToken, accessToken, "");
+        if (username == null) {
+            throw new AuthenticationException("token失效,请重新登陆");
+        }
+        User userQuery = new User();
+        userQuery.setUsername(username);
+        User user = userService.queryOne(userQuery);
+        if (user == null) {
+            throw new AuthenticationException("用户不存在!");
+        }
+        if (!JwtUtil.verify(accessToken, username, user.getPassword())) {
+            throw new AuthenticationException("用户名或密码错误");
+        }
+        return new SimpleAuthenticationInfo(accessToken, accessToken, getName());
     }
 }
