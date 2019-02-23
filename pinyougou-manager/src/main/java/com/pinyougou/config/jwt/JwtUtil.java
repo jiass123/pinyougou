@@ -1,15 +1,32 @@
-package com.pinyougou.config.shiro;
+package com.pinyougou.config.jwt;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import com.pinyougou.config.properties.ShiroConfigProperties;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
-public class JwtUtil {
+@Component
+public class JwtUtil implements InitializingBean {
 
-    private static final long EXPIRE_TIME = 10 * 1000;
+    @Autowired
+    private ShiroConfigProperties configProperties;
+
+    private static long EXPIRE_TIME;
+
+    public void setExpireTime() {
+        EXPIRE_TIME = configProperties.getExpireTime();
+    }
+
+    @Override
+    public void afterPropertiesSet(){
+        setExpireTime();
+    }
 
     /**
      * 校验token是否正确
@@ -60,4 +77,7 @@ public class JwtUtil {
                 .sign(algorithm);
 
     }
+
+
+
 }

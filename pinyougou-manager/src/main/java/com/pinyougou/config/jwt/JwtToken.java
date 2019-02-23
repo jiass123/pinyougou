@@ -1,4 +1,4 @@
-package com.pinyougou.config.shiro;
+package com.pinyougou.config.jwt;
 
 import org.apache.shiro.authc.AuthenticationToken;
 

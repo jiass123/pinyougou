@@ -1,6 +1,7 @@
 package com.pinyougou.config.shiro;
 
-import com.alibaba.fastjson.JSON;
+import com.pinyougou.config.jwt.JwtToken;
+import com.pinyougou.config.jwt.JwtUtil;
 import com.pinyougou.sys.api.UserService;
 import com.pinyougou.sys.entity.User;
 import org.apache.shiro.authc.AuthenticationException;
