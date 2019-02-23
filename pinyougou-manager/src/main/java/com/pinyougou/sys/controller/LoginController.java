@@ -1,19 +1,13 @@
 package com.pinyougou.sys.controller;
 
-import com.pinyougou.common.constant.Constant;
 import com.pinyougou.common.entity.Result;
-import com.pinyougou.config.shiro.JwtToken;
-import com.pinyougou.config.shiro.JwtUtil;
+import com.pinyougou.config.jwt.JwtUtil;
 import com.pinyougou.sys.api.UserService;
 import com.pinyougou.sys.entity.LoginCondition;
 import com.pinyougou.sys.entity.LoginResult;
 import com.pinyougou.sys.entity.User;
-import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.credential.SimpleCredentialsMatcher;
-import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -48,11 +42,6 @@ public class LoginController {
             throw new AuthenticationException("用户名或密码错误");
         }
         return user;
-    }
-
-    @GetMapping("/test")
-    public Result test() {
-        return Result.ok();
     }
 
     private LoginResult getLoginResult(String accessToken,User user){

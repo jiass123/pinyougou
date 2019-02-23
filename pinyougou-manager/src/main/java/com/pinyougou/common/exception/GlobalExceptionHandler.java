@@ -1,4 +1,4 @@
-package com.pinyougou.exception;
+package com.pinyougou.common.exception;
 
 import com.pinyougou.common.entity.Result;
 import org.slf4j.Logger;
