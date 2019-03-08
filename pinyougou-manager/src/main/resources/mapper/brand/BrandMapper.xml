@@ -4,7 +4,7 @@
 <mapper namespace="com.pinyougou.brand.mapper.BrandMapper">
 
     <select id="selectByQO" parameterType="com.pinyougou.brand.api.qo.BrandQO" resultType="com.pinyougou.brand.api.vo.BrandVO">
-        SELECT * FROM tb_brand;
+        SELECT id, name, first_char FROM tb_brand
     </select>
 
 </mapper>

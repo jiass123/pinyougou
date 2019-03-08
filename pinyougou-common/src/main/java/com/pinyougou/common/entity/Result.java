@@ -41,12 +41,6 @@ public class Result extends HashMap<String, Object> {
         return result;
     }
 
-    public static Result ok(Map<String, Object> map) {
-        Result result = new Result();
-        result.putAll(map);
-        return result;
-    }
-
     public static Result ok() {
         return new Result();
     }
