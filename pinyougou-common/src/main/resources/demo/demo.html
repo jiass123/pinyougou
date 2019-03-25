@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+    <script>
+        var app = angular.module('myApp',[]);
+        app.controller('myController',function ($scope) {
+            $scope.add = function () {
+                // return Number($scope.x) + Number($scope.y);
+                $scope.z =  Number($scope.x) + Number($scope.y)
+                return z;
+            };
+            $scope.list = [1,2,3,4];
+            $scope.listObject = [
+                {name:"a",math:60},
+                {name:"b",math:70},
+                {name:"c",math:80}
+            ];
+        });
+
+    </script>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+    <button ng-click="add()">运算</button>
+    <input ng-model="x"> <input ng-model="y">
+    {{z}}
+    <table>
+        <tr ng-repeat="a in list">
+            <td>{{a}}</td>
+        </tr>
+    </table>
+    <table>
+        <tr ng-repeat="entity in listObject">
+            <td>{{entity.name}}</td><td>{{entity.math}}</td>
+        </tr>
+    </table>
+</body>
+</html>

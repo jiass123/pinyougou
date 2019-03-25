@@ -12,5 +12,5 @@ mybatis:
         map-underscore-to-camel-case: true
 #shrio配置
 shiro:
-    enable: true
+    enable: false
     expiretime : 3
