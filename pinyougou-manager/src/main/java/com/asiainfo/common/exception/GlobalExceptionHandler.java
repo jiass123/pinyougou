@@ -1,6 +1,6 @@
-package com.pinyougou.common.exception;
+package com.asiainfo.common.exception;
 
-import com.pinyougou.common.entity.Result;
+import com.asiainfo.common.entity.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DuplicateKeyException;

@@ -1,4 +1,4 @@
-package com.pinyougou.abstractfactory;
+package com.asiainfo.abstractfactory;
 
 public class JavaCourseFactory implements CourseFactory{
     @Override

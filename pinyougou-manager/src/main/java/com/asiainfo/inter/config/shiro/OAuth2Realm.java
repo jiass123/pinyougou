@@ -1,7 +1,7 @@
-package com.asiainfo.config.shiro;
+package com.asiainfo.inter.config.shiro;
 
-import com.asiainfo.config.jwt.JwtToken;
-import com.asiainfo.config.jwt.JwtUtil;
+import com.asiainfo.inter.config.jwt.JwtToken;
+import com.asiainfo.inter.config.jwt.JwtUtil;
 import com.asiainfo.sys.api.UserService;
 import com.asiainfo.sys.entity.User;
 import org.apache.shiro.authc.AuthenticationException;

@@ -1,16 +1,55 @@
 spring:
+  rabbitmq:
+    addresses: 10.1.234.16
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+    cache:
+      channel:
+        checkout-timeout: 15000
+    publisher-confirms: true
+    publisher-returns: true
+    template:
+      mandatory: true
   datasource:
     url: jdbc:mysql://localhost:3306/pinyougoudb?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
     username: root
     password: 123
     type: com.alibaba.druid.pool.DruidDataSource
-    driverClassName: com.mysql.jdbc.Driver
-# Mybatis配置
+    driver-class-name: com.mysql.jdbc.Driver
+  resources:
+    static-locations: classpath:/static/,classpath:/views/
+  #mvc:
+    #static-path-pattern: /static/**
+  thymeleaf:
+    cache: false
+    prefix: classpath:/views/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+  #Activit配置
+  activiti:
+    check-process-definitions: false
+#Mybatis配置
 mybatis:
-      mapperLocations: classpath*:mapper/**/*.xml
-      configuration:
-        map-underscore-to-camel-case: true
+  mapperLocations: classpath*:mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
 #shrio配置
 shiro:
-    enable: false
-    expiretime : 3
+  enable: false
+  expiretime: 3
+#sftp配置
+sftp:
+  username: puaiuc
+  host: 10.1.234.16
+  password: Pu@1uC2016+1s
+  localPath: /Users/jiass/Downloads/code/study/pinyougou/pinyougou-manager/src/main/java/com/asiainfo/sftp_jsch/shiro-core-1.4.0.jar
+  remotePath: /home/puaiuc/geecuser/tomcat-sso-server/apache-tomcat-8.5.37/webapps/ROOT/WEB-INF/lib/shiro-core-1.4.0.jar
+  tomcatResStart: /home/puaiuc/geecuser/geec-web/apache-tomcat-8.5.37/bin/
+#接口日志记录
+inter:
+  url: /inter/test

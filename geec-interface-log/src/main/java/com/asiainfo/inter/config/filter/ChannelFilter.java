@@ -1,7 +1,7 @@
-package com.asiainfo.config.filter;
+package com.asiainfo.inter.config.filter;
 
-import com.asiainfo.config.wrapper.RequestWrapper;
-import com.asiainfo.config.wrapper.ResponseWrapper;
+import com.asiainfo.inter.config.wrapper.RequestWrapper;
+import com.asiainfo.inter.config.wrapper.ResponseWrapper;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

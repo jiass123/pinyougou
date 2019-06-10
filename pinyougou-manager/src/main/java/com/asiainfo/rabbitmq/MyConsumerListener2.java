@@ -7,9 +7,13 @@ import com.rabbitmq.client.Envelope;
 
 import java.io.IOException;
 
-public class MyConsumerListener extends DefaultConsumer {
-    public MyConsumerListener(Channel channel) {
+public class MyConsumerListener2 extends DefaultConsumer {
+
+    private Channel channel;
+
+    public MyConsumerListener2(Channel channel) {
         super(channel);
+        this.channel = channel;
     }
 
     @Override
@@ -18,5 +22,8 @@ public class MyConsumerListener extends DefaultConsumer {
         System.out.println(envelope);
         System.out.println(properties);
         System.out.println(body);
+
+        // 参数1 消息标志 参数2 是否批量 这个参数需要在basicQos的第二个参数不为1的是否有效
+        channel.basicAck(envelope.getDeliveryTag(),false);
     }
 }

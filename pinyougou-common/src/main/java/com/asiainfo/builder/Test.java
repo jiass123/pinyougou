@@ -1,4 +1,4 @@
-package com.pinyougou.builder;
+package com.asiainfo.builder;
 
 public class Test {
 

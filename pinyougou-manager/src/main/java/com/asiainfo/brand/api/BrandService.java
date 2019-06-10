@@ -1,9 +1,9 @@
-package com.pinyougou.brand.api;
+package com.asiainfo.brand.api;
 
 
-import com.pinyougou.brand.entity.Brand;
-import com.pinyougou.common.service.IBaseService;
-import com.pinyougou.common.service.QueryService;
+import com.asiainfo.brand.entity.Brand;
+import com.asiainfo.common.service.IBaseService;
+import com.asiainfo.common.service.QueryService;
 
 /**
  * 
@@ -14,4 +14,10 @@ import com.pinyougou.common.service.QueryService;
  */
 public interface BrandService  extends IBaseService<Brand> , QueryService {
 
+    /**
+     * 事务测试
+     */
+    void transcationTest();
+
+    void asyncTest();
 }

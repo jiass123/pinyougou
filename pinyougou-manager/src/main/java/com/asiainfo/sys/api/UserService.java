@@ -1,7 +1,7 @@
-package com.pinyougou.sys.api;
+package com.asiainfo.sys.api;
 
-import com.pinyougou.common.service.IBaseService;
-import com.pinyougou.sys.entity.User;
+import com.asiainfo.common.service.IBaseService;
+import com.asiainfo.sys.entity.User;
 
 public interface UserService extends IBaseService<User> {
 

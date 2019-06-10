@@ -1,6 +1,6 @@
-package com.asiainfo.config.shiro;
+package com.asiainfo.inter.config.shiro;
 
-import com.asiainfo.config.properties.ShiroConfigProperties;
+import com.asiainfo.inter.config.properties.ShiroConfigProperties;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;

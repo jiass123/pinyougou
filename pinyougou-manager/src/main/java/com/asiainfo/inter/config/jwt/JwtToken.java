@@ -1,4 +1,4 @@
-package com.asiainfo.config.jwt;
+package com.asiainfo.inter.config.jwt;
 
 import org.apache.shiro.authc.AuthenticationToken;
 

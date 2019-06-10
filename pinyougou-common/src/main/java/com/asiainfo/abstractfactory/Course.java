@@ -1,4 +1,4 @@
-package com.pinyougou.abstractfactory;
+package com.asiainfo.abstractfactory;
 
 public interface Course {
 

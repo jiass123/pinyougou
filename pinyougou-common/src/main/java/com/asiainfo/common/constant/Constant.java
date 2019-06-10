@@ -1,4 +1,4 @@
-package com.pinyougou.common.constant;
+package com.asiainfo.common.constant;
 
 public class Constant {
 

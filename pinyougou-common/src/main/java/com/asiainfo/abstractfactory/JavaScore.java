@@ -1,4 +1,4 @@
-package com.pinyougou.abstractfactory;
+package com.asiainfo.abstractfactory;
 
 public class JavaScore implements Score {
     @Override

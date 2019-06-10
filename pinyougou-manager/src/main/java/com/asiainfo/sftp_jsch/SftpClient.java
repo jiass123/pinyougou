@@ -1,9 +1,8 @@
-package com.pinyougou.sftp_jsch;
+package com.asiainfo.sftp_jsch;
 
 import com.jcraft.jsch.*;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
-import org.apache.commons.io.FilenameUtils;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;

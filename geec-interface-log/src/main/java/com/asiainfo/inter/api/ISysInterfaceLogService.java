@@ -1,7 +1,7 @@
-package com.asiainfo.api;
+package com.asiainfo.inter.api;
 
 
-import com.asiainfo.entity.SysInterfaceLog;
+import com.asiainfo.inter.entity.SysInterfaceLog;
 
 /**
  * 接口日志表
@@ -30,4 +30,9 @@ public interface ISysInterfaceLogService {
      * @param sysInterfaceLog
      */
     void updateByPrimaryKey(SysInterfaceLog sysInterfaceLog);
+
+    /**
+     * 创建接口日志表
+     */
+    void createTable();
 }

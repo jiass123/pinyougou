@@ -1,17 +1,15 @@
-package com.pinyougou.brand.controller;
+package com.asiainfo.brand.controller;
 
-import com.pinyougou.brand.api.BrandService;
-import com.pinyougou.brand.api.qo.BrandQO;
-import com.pinyougou.brand.entity.Brand;
-import com.pinyougou.common.entity.Result;
-import com.pinyougou.common.holder.PageQueryHolder;
+import com.asiainfo.brand.api.BrandService;
+import com.asiainfo.brand.api.qo.BrandQO;
+import com.asiainfo.brand.entity.Brand;
+import com.asiainfo.common.entity.Result;
+import com.asiainfo.common.holder.PageQueryHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * @author jiass
@@ -68,5 +66,16 @@ public class BrandController implements InitializingBean {
             brandService.deleteByPrimaryKey(id);
         }
         return Result.ok();
+    }
+
+    @PostMapping("/transcation/test")
+    public void transcationTest(){
+        brandService.transcationTest();
+    }
+
+    @PostMapping("/async/test")
+    public String asyncTest(){
+        brandService.asyncTest();
+        return "abc";
     }
 }

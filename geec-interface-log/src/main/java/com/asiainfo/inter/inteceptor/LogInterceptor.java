@@ -1,11 +1,11 @@
-package com.asiainfo.inteceptor;
+package com.asiainfo.inter.inteceptor;
 
-import com.asiainfo.api.ISysInterfaceLogService;
-import com.asiainfo.api.ISysInterfacesService;
-import com.asiainfo.config.properties.SysInterfaceLogProperties;
-import com.asiainfo.config.wrapper.RequestWrapper;
-import com.asiainfo.config.wrapper.ResponseWrapper;
-import com.asiainfo.entity.SysInterfaceLog;
+import com.asiainfo.inter.api.ISysInterfaceLogService;
+import com.asiainfo.inter.api.ISysInterfacesService;
+import com.asiainfo.inter.config.properties.SysInterfaceLogProperties;
+import com.asiainfo.inter.config.wrapper.RequestWrapper;
+import com.asiainfo.inter.config.wrapper.ResponseWrapper;
+import com.asiainfo.inter.entity.SysInterfaceLog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;

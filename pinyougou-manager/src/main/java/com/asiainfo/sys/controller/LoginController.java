@@ -1,11 +1,11 @@
-package com.pinyougou.sys.controller;
+package com.asiainfo.sys.controller;
 
-import com.pinyougou.common.entity.Result;
-import com.pinyougou.config.jwt.JwtUtil;
-import com.pinyougou.sys.api.UserService;
-import com.pinyougou.sys.entity.LoginCondition;
-import com.pinyougou.sys.entity.LoginResult;
-import com.pinyougou.sys.entity.User;
+import com.asiainfo.common.entity.Result;
+import com.asiainfo.inter.config.jwt.JwtUtil;
+import com.asiainfo.sys.api.UserService;
+import com.asiainfo.sys.entity.LoginCondition;
+import com.asiainfo.sys.entity.LoginResult;
+import com.asiainfo.sys.entity.User;
 import org.apache.shiro.authc.AuthenticationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

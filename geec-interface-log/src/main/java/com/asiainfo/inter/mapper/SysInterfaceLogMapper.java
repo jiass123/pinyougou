@@ -1,7 +1,6 @@
-package com.asiainfo.mapper;
+package com.asiainfo.inter.mapper;
 
-import com.asiainfo.entity.SysInterfaceLog;
-import org.apache.ibatis.annotations.Mapper;
+import com.asiainfo.inter.entity.SysInterfaceLog;
 import org.apache.ibatis.annotations.Param;
 
 /**
@@ -18,4 +17,6 @@ public interface SysInterfaceLogMapper{
     SysInterfaceLog selectByPrimaryKey(@Param("id") Integer key);
 
     void updateLog(SysInterfaceLog sysInterfaceLog);
+
+    void createTable();
 }

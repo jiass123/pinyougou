@@ -1,4 +1,4 @@
-package com.pinyougou.simplefactory;
+package com.asiainfo.simplefactory;
 
 public abstract class Vedio {
 

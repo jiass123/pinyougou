@@ -1,8 +1,8 @@
-package com.pinyougou;
+package com.asiainfo;
 
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.SftpException;
-import com.pinyougou.sftp_jsch.SftpClient;
+import com.asiainfo.sftp_jsch.SftpClient;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,11 +1,11 @@
 package com.asiainfo.rabbitmq;
 
-import com.rabbitmq.client.Channel;
-import com.rabbitmq.client.ConfirmListener;
-import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.*;
+import com.rabbitmq.client.impl.AMQBasicProperties;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeoutException;
 
 public class NAckProduce {
@@ -13,7 +13,7 @@ public class NAckProduce {
     public static void main(String[] args) throws IOException, TimeoutException {
         // 创建连接工厂
         ConnectionFactory connectionFactory = new ConnectionFactory();
-        connectionFactory.setHost("10.1.234.16");
+        connectionFactory.setHost("112.35.22.232");
         connectionFactory.setPort(5672);
         connectionFactory.setVirtualHost("/");
 
@@ -23,20 +23,18 @@ public class NAckProduce {
         // 通过connection 创建channel
         Channel channel = connection.createChannel();
 
-        channel.confirmSelect();
+        Map<String,Object> header = new HashMap<String,Object>();
+
         // 发送消息
-        channel.basicPublish("exchange_ack_test","ack.queue",null,"zhangsan".getBytes());
+        for (int i = 0 ; i < 5 ;i++){
+            header.put("num",i);
+            AMQP.BasicProperties properties = new AMQP.BasicProperties().builder()
+                    .deliveryMode(2)
+                    .headers(header).build();
+            channel.basicPublish("exchange_nack_test","ack.queue",properties,"zhangsan".getBytes());
+        }
 
-        channel.addConfirmListener(new ConfirmListener() {
-            @Override
-            public void handleAck(long l, boolean b) throws IOException {
-                System.err.println("ack成功");
-            }
-
-            @Override
-            public void handleNack(long l, boolean b) throws IOException {
-                System.err.println("ack失败");
-            }
-        });
+        channel.close();
+        connection.close();
     }
 }

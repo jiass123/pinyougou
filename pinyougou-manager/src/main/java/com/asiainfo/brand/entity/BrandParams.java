@@ -1,4 +1,4 @@
-package com.pinyougou.brand.entity;
+package com.asiainfo.brand.entity;
 
 public class BrandParams implements SignText {
 

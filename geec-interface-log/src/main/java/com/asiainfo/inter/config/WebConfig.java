@@ -1,6 +1,6 @@
-package com.asiainfo.config;
+package com.asiainfo.inter.config;
 
-import com.asiainfo.inteceptor.LogInterceptor;
+import com.asiainfo.inter.inteceptor.LogInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -14,6 +14,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(logInterceptor);
+        registry.addInterceptor(logInterceptor).addPathPatterns("/inter/*");
     }
 }

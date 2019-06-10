@@ -1,4 +1,4 @@
-package com.pinyougou.brand.entity;
+package com.asiainfo.brand.entity;
 
 import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.annotation.JsonInclude;

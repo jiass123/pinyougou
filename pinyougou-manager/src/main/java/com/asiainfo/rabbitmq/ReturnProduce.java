@@ -1,8 +1,6 @@
 package com.asiainfo.rabbitmq;
 
-import com.rabbitmq.client.Channel;
-import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.*;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
@@ -22,11 +20,21 @@ public class ReturnProduce {
         // 通过connection 创建channel
         Channel channel = connection.createChannel();
 
-        // 发送消息
-        channel.basicPublish("exchange_test","test.queue",null,"zhangsan".getBytes());
+        // 发送消息 参数3 是否设置参数路由失败返回
+        channel.basicPublish("exchange_return_test","abc.queue",true,null,"zhangsan".getBytes());
+//        channel.basicPublish("exchange_return_test","abc.queue",null,"zhangsan".getBytes());
+        channel.addReturnListener(new ReturnListener() {
 
-        // 关闭相关的连接
-        channel.close();
-        connection.close();
+            // 消息未被发送
+            @Override
+            public void handleReturn(int replyCode, String relyMsg, String exchange, String routingKey, AMQP.BasicProperties basicProperties, byte[] bytes) throws IOException {
+                System.out.println(relyMsg);
+                System.out.println(replyCode);
+                System.out.println(exchange);
+                System.out.println(routingKey);
+                System.out.println(basicProperties);
+                System.out.println(new String(bytes));
+            }
+        });
     }
 }

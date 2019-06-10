@@ -1,6 +1,6 @@
-package com.pinyougou.common.service;
+package com.asiainfo.common.service;
 
-import com.pinyougou.common.entity.QueryQO;
+import com.asiainfo.common.entity.QueryQO;
 
 import java.util.List;
 

@@ -23,7 +23,9 @@ public class QosProduce {
         Channel channel = connection.createChannel();
 
         // 发送消息
-        channel.basicPublish("exchange_myConsumer_test","abc.queue",null,"zhangsan".getBytes());
+        for (int i = 0 ; i < 5 ; i++){
+            channel.basicPublish("exchange_qos_test","qos.queue",null,"zhangsan".getBytes());
+        }
 
         // 关闭相关的连接
         channel.close();

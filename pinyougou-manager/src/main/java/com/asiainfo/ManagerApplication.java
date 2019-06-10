@@ -1,4 +1,4 @@
-package com.pinyougou;
+package com.asiainfo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,14 +6,15 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.stereotype.Component;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import tk.mybatis.spring.annotation.MapperScan;
 
+@EnableAsync
 @SpringBootApplication
-@MapperScan({"com.pinyougou.*.mapper","com.asiainfo.mapper"})
-@ComponentScan({"com.asiainfo","com.pinyougou"})
-@ServletComponentScan("com.asiainfo")
+@MapperScan({"com.asiainfo.*.mapper"})
+//@ComponentScan({"com.asiainfo", "com.asiainfo"})
+@ServletComponentScan
 @EnableTransactionManagement
 public class ManagerApplication extends SpringBootServletInitializer {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.pinyougou.factorymethod;
+package com.asiainfo.factorymethod;
 
 public abstract class VedioFactory {
 

@@ -1,4 +1,4 @@
-package com.pinyougou.redis;
+package com.asiainfo.redis;
 
 import java.util.*;
 

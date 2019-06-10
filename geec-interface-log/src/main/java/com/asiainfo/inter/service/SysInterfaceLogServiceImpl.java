@@ -1,8 +1,8 @@
-package com.asiainfo.service;
+package com.asiainfo.inter.service;
 
-import com.asiainfo.api.ISysInterfaceLogService;
-import com.asiainfo.entity.SysInterfaceLog;
-import com.asiainfo.mapper.SysInterfaceLogMapper;
+import com.asiainfo.inter.api.ISysInterfaceLogService;
+import com.asiainfo.inter.entity.SysInterfaceLog;
+import com.asiainfo.inter.mapper.SysInterfaceLogMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,5 +26,10 @@ public class SysInterfaceLogServiceImpl implements ISysInterfaceLogService {
     @Override
     public void updateByPrimaryKey(SysInterfaceLog sysInterfaceLog) {
         sysInterfaceLogMapper.updateLog(sysInterfaceLog);
+    }
+
+    @Override
+    public void createTable() {
+        sysInterfaceLogMapper.createTable();
     }
 }

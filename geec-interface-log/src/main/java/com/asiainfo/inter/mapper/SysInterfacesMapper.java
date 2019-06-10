@@ -1,4 +1,4 @@
-package com.asiainfo.mapper;
+package com.asiainfo.inter.mapper;
 
 import org.apache.ibatis.annotations.Param;
 
@@ -12,4 +12,6 @@ import org.apache.ibatis.annotations.Param;
 public interface SysInterfacesMapper{
 
     String selectInterfaceNoByUrl(@Param("url") String url);
+
+    void createTable();
 }

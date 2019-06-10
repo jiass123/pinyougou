@@ -1,4 +1,4 @@
-package com.pinyougou.common.entity;
+package com.asiainfo.common.entity;
 
 public class PageQO {
 

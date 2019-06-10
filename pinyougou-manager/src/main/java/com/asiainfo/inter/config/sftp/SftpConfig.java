@@ -1,4 +1,4 @@
-package com.asiainfo.config.sftp;
+package com.asiainfo.inter.config.sftp;
 
 import com.asiainfo.sftp_jsch.SftpClient;
 import org.springframework.beans.factory.annotation.Value;

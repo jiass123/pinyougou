@@ -10,16 +10,22 @@
     <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../plugins/adminLTE/css/AdminLTE.css">
     <link rel="stylesheet" href="../plugins/adminLTE/css/skins/_all-skins.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../demo/css/style.css">
 	<script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
     <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
-    
+
+	<script src="../plugins/angularjs/angular.min.js"></script>
+	<script src="../plugins/angularjs/pagination.js"></script>
+	<script src="../js/modules/spec/controller/specController.js"></script>
+	<!--<script src="../js/modules/spec/service/specService.js"></script>-->
 </head>
 
-<body class="hold-transition skin-red sidebar-mini" >
-  <!-- .box-body -->                
+<body class="hold-transition skin-red sidebar-mini" ng-bind="specApp" ng-controller="specController">
+  <!-- .box-body -->
+
                     <div class="box-header with-border">
-                        <h3 class="box-title">规格管理</h3>
+						<input type="text" ng-model="abc"/>
+                        <h3 class="box-title">规格管理{{abc}}</h3>
                     </div>
                     <div class="box-body">
                         <!-- 数据表格 -->
@@ -56,23 +62,16 @@
 			                          </tr>
 			                      </thead>
 			                      <tbody>
-			                          <tr >
-			                              <td><input  type="checkbox" ></td>			                              
-				                          <td>1</td>
-									      <td>网络制式</td>
-		                                  <td class="text-center">                                           
-		                                 	  <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#editModal">修改</button>                                           
-		                                  </td>
-			                          </tr>
-									  <tr >
-			                              <td><input  type="checkbox" ></td>			                              
-				                          <td>2</td>
-									      <td>服装尺码</td>
-		                                  <td class="text-center">                                           
-		                                 	  <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#editModal">修改</button>                                           
-		                                  </td>
-			                          </tr>
-			                      </tbody>
+									  <tr ng-repeat="spec in specList">
+										  <td><input  type="checkbox" ></td>
+										  <td>{{spec.id}}</td>
+										  <td>{{spec.name}}</td>
+										  <td class="text-center">
+											  <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#editModal">修改</button>
+										  </td>
+									  </tr>
+									  <tm-pagination conf="paginationConf"></tm-pagination>
+								  </tbody>
 			                  </table>
 			                  <!--数据列表/-->    
                         </div>

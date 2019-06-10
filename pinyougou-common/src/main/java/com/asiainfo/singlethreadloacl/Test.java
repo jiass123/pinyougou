@@ -1,4 +1,4 @@
-package com.pinyougou.singlethreadloacl;
+package com.asiainfo.singlethreadloacl;
 
 public class Test {
 

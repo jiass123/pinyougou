@@ -1,4 +1,4 @@
-package com.pinyougou;
+package com.asiainfo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

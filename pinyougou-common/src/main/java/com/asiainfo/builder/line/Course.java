@@ -1,4 +1,4 @@
-package com.pinyougou.builder.line;
+package com.asiainfo.builder.line;
 
 public class Course {
 

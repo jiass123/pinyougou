@@ -1,4 +1,4 @@
-package com.pinyougou.common.service;
+package com.asiainfo.common.service;
 
 import tk.mybatis.mapper.entity.Example;
 

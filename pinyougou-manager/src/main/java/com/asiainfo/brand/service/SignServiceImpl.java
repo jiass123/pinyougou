@@ -1,6 +1,6 @@
-package com.pinyougou.brand.service;
+package com.asiainfo.brand.service;
 
-import com.pinyougou.brand.api.SignService;
+import com.asiainfo.brand.api.SignService;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;

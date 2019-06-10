@@ -1,4 +1,4 @@
-package com.pinyougou.brand.api;
+package com.asiainfo.brand.api;
 
 public interface SignService {
 

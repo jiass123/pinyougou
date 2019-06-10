@@ -1,11 +1,11 @@
-package com.pinyougou.common.holder;
+package com.asiainfo.common.holder;
 
 import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.pinyougou.common.entity.QueryQO;
-import com.pinyougou.common.entity.Result;
-import com.pinyougou.common.service.QueryService;
+import com.asiainfo.common.entity.QueryQO;
+import com.asiainfo.common.entity.Result;
+import com.asiainfo.common.service.QueryService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;

@@ -1,4 +1,4 @@
-package com.pinyougou.sys.entity;
+package com.asiainfo.sys.entity;
 
 import java.io.Serializable;
 import java.util.Date;

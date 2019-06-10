@@ -1,6 +1,6 @@
-package com.asiainfo.config.security;
+package com.asiainfo.inter.config.security;
 
-import com.asiainfo.config.properties.ShiroConfigProperties;
+import com.asiainfo.inter.config.properties.ShiroConfigProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 

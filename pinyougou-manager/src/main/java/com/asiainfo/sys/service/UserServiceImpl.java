@@ -1,8 +1,8 @@
-package com.pinyougou.sys.service;
+package com.asiainfo.sys.service;
 
-import com.pinyougou.common.service.BaseServiceImpl;
-import com.pinyougou.sys.api.UserService;
-import com.pinyougou.sys.entity.User;
+import com.asiainfo.common.service.BaseServiceImpl;
+import com.asiainfo.sys.api.UserService;
+import com.asiainfo.sys.entity.User;
 import org.springframework.stereotype.Service;
 
 @Service("userService")

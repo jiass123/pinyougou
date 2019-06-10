@@ -1,4 +1,4 @@
-package com.asiainfo.api;
+package com.asiainfo.inter.api;
 
 /**
  * 接口定义表
@@ -15,4 +15,9 @@ public interface ISysInterfacesService{
      * @return
      */
     String queryInterfaceNoByUrl(String url);
+
+    /**
+     * 创建接口表
+     */
+    void createTable();
 }

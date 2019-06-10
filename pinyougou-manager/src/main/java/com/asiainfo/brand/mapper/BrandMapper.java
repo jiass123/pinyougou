@@ -1,8 +1,8 @@
-package com.pinyougou.brand.mapper;
+package com.asiainfo.brand.mapper;
 
-import com.pinyougou.brand.api.vo.BrandVO;
-import com.pinyougou.brand.entity.Brand;
-import com.pinyougou.common.entity.QueryQO;
+import com.asiainfo.brand.api.vo.BrandVO;
+import com.asiainfo.brand.entity.Brand;
+import com.asiainfo.common.entity.QueryQO;
 import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;

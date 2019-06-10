@@ -1,4 +1,4 @@
-package com.asiainfo.entity;
+package com.asiainfo.inter.entity;
 
 import java.io.Serializable;
 import java.util.Date;

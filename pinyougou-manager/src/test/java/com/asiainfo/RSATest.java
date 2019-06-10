@@ -1,7 +1,7 @@
-package com.pinyougou;
+package com.asiainfo;
 
-import com.pinyougou.brand.entity.BrandParams;
-import com.pinyougou.common.utils.RSAUtil;
+import com.asiainfo.brand.entity.BrandParams;
+import com.asiainfo.common.utils.RSAUtil;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;

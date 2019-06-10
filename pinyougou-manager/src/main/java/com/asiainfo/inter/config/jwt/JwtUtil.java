@@ -1,10 +1,10 @@
-package com.asiainfo.config.jwt;
+package com.asiainfo.inter.config.jwt;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.asiainfo.config.properties.ShiroConfigProperties;
+import com.asiainfo.inter.config.properties.ShiroConfigProperties;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

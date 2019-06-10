@@ -1,6 +1,6 @@
-package com.pinyougou.brand.api.qo;
+package com.asiainfo.brand.api.qo;
 
-import com.pinyougou.common.entity.QueryQO;
+import com.asiainfo.common.entity.QueryQO;
 
 public class BrandQO extends QueryQO {
 

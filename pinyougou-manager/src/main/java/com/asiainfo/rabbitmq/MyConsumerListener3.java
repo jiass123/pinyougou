@@ -6,6 +6,7 @@ import com.rabbitmq.client.DefaultConsumer;
 import com.rabbitmq.client.Envelope;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class MyConsumerListener3 extends DefaultConsumer {
 
@@ -22,8 +23,18 @@ public class MyConsumerListener3 extends DefaultConsumer {
         System.out.println(envelope);
         System.out.println(properties);
         System.out.println(body);
-
-        // 参数1 消息标志 参数2 是否批量 这个参数需要在basicQos的第二个参数不为1的是否有效
-        channel.basicAck(envelope.getDeliveryTag(),false);
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+//         参数1 消息标志 参数2 是否批量 这个参数需要在basicQos的第二个参数不为1的是否有效
+        if(0 == (int)properties.getHeaders().get("num")){
+            // 参数1 消息标志 参数2 是否批量 参数3 是否重回队列（重回到消息的末尾）
+            channel.basicNack(envelope.getDeliveryTag(),false,true);
+        }else{
+            channel.basicAck(envelope.getDeliveryTag(),false);
+        }
+        System.out.println(properties.getHeaders().get("num"));
     }
 }

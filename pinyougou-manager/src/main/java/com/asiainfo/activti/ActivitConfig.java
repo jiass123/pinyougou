@@ -1,12 +1,8 @@
-package com.pinyougou.activti;
+package com.asiainfo.activti;
 
 import org.activiti.engine.ProcessEngineConfiguration;
-import org.assertj.core.internal.bytebuddy.asm.Advice;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import javax.sql.DataSource;
 
 @Configuration
 public class ActivitConfig {

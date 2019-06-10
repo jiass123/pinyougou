@@ -1,6 +1,6 @@
-package com.pinyougou.sys.mapper;
+package com.asiainfo.sys.mapper;
 
-import com.pinyougou.sys.entity.User;
+import com.asiainfo.sys.entity.User;
 import tk.mybatis.mapper.common.Mapper;
 /**
  * 用户表

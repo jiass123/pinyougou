@@ -1,4 +1,4 @@
-package com.pinyougou.common.exception;
+package com.asiainfo.common.exception;
 
 /**
  * 自定义异常

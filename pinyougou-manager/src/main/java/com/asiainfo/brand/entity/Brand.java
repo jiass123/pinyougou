@@ -1,7 +1,6 @@
-package com.pinyougou.brand.entity;
+package com.asiainfo.brand.entity;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Id;
 import javax.persistence.Table;
 

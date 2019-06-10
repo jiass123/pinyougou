@@ -1,4 +1,4 @@
-package com.pinyougou.common.service;
+package com.asiainfo.common.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

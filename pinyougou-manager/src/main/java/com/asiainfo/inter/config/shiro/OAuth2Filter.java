@@ -1,8 +1,8 @@
-package com.asiainfo.config.shiro;
+package com.asiainfo.inter.config.shiro;
 
 import com.alibaba.fastjson.JSON;
 import com.asiainfo.common.entity.Result;
-import com.asiainfo.config.jwt.JwtToken;
+import com.asiainfo.inter.config.jwt.JwtToken;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.web.filter.authc.AuthenticatingFilter;

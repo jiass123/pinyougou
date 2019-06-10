@@ -1,4 +1,4 @@
-package com.pinyougou.brand.api.vo;
+package com.asiainfo.brand.api.vo;
 
 import com.fasterxml.jackson.annotation.JsonView;
 

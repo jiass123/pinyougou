@@ -1,4 +1,4 @@
-package com.asiainfo.config.wrapper;
+package com.asiainfo.inter.config.wrapper;
 
 import javax.servlet.ReadListener;
 import javax.servlet.ServletInputStream;

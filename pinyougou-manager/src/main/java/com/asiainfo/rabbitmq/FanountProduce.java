@@ -23,7 +23,7 @@ public class FanountProduce {
         Channel channel = connection.createChannel();
 
         // 发送消息
-        channel.basicPublish("exchange_test","test.queue",null,"zhangsan".getBytes());
+        channel.basicPublish("exchange_fanout_test","",null,"zhangsan".getBytes());
 
         // 关闭相关的连接
         channel.close();

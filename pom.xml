@@ -34,6 +34,11 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.asiainfo</groupId>
+                <artifactId>geec-interface-log</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
             <!--druid -->
             <dependency>
                 <groupId>com.alibaba</groupId>

@@ -1,4 +1,4 @@
-package com.asiainfo.webservice;
+package com.asiainfo.webserviceserver;
 
 public interface WeatherInterface {
 
