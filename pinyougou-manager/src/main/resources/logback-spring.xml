@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<!--<property name="logPath" value="/home/geecuser/geec-order" />-->
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>[%-5level] %d [%thread] %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="busiDebug" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${logPath}/logs/busiDebug.log</File>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>DEBUG</level>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${logPath}/logbackup/busiDebug-%d{yyyy-MM-dd}-%i.log.gz</FileNamePattern>
+			<MaxHistory>30</MaxHistory>
+			<TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>20MB</MaxFileSize>
+			</TimeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>[%-5level] %d [%thread] %logger{36} - %msg%n</pattern>
+		</layout>
+	</appender>
+
+	<appender name="busiInfo" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${logPath}/logs/busiInfo.log</File>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>INFO</level>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${logPath}/logbackup/busiInfo-%d{yyyy-MM-dd}-%i.log.gz</FileNamePattern>
+			<MaxHistory>30</MaxHistory>
+			<TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>20MB</MaxFileSize>
+			</TimeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>[%-5level] %d [%thread] %logger{36} - %msg%n</pattern>
+		</layout>
+	</appender>
+
+	<appender name="sysDebug" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${logPath}/logs/sysDebug.log</File>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>DEBUG</level>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${logPath}/logbackup/sysDebug-%d{yyyy-MM-dd}-%i.log.gz</FileNamePattern>
+			<MaxHistory>30</MaxHistory>
+			<TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>20MB</MaxFileSize>
+			</TimeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>[%-5level] %d [%thread] %logger{36} - %msg%n</pattern>
+		</layout>
+	</appender>
+
+	<appender name="sysInfo" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${logPath}/logs/sysInfo.log</File>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>INFO</level>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${logPath}/logbackup/sysInfo-%d{yyyy-MM-dd}-%i.log.gz</FileNamePattern>
+			<MaxHistory>30</MaxHistory>
+			<TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>20MB</MaxFileSize>
+			</TimeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>[%-5level] %d [%thread] %logger{36} - %msg%n</pattern>
+		</layout>
+	</appender>
+
+	<appender name="sysAll" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${logPath}/logs/sysAll.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${logPath}/logbackup/sysAll-%d{yyyy-MM-dd}-%i.log.gz</FileNamePattern>
+			<MaxHistory>30</MaxHistory>
+			<TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>20MB</MaxFileSize>
+			</TimeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>[%-5level] %d [%thread] %logger{36} - %msg%n</pattern>
+		</layout>
+	</appender>
+
+	<!-- 开发环境 -->
+	<springProfile name="dev">
+		<logger name="com.asiainfo" additivity="false" level="DEBUG">
+			<appender-ref ref="busiDebug" />
+			<appender-ref ref="busiInfo" />
+			<appender-ref ref="STDOUT" />
+		</logger>
+		<root level="debug">
+			<appender-ref ref="sysDebug" />
+			<appender-ref ref="sysInfo" />
+			<appender-ref ref="sysAll" />
+			<appender-ref ref="STDOUT" />
+		</root>
+	</springProfile>
+
+	<!-- 测试环境 -->
+	<springProfile name="test">
+		<logger name="com.asiainfo" additivity="false" level="DEBUG">
+			<appender-ref ref="busiDebug" />
+			<appender-ref ref="busiInfo" />
+			<appender-ref ref="STDOUT" />
+		</logger>
+		<root level="debug">
+			<appender-ref ref="sysDebug" />
+			<appender-ref ref="sysInfo" />
+			<appender-ref ref="sysAll" />
+			<appender-ref ref="STDOUT" />
+		</root>
+	</springProfile>
+
+	<!-- 生产环境 -->
+	<springProfile name="pro">
+		<logger name="com.asiainfo" additivity="false" level="INFO">
+			<appender-ref ref="busiInfo" />
+			<appender-ref ref="STDOUT" />
+		</logger>
+		<root level="INFO">
+			<appender-ref ref="sysInfo" />
+			<appender-ref ref="sysAll" />
+			<appender-ref ref="STDOUT" />
+		</root>
+	</springProfile>
+
+</configuration>
